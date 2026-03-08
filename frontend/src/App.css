@@ -128,14 +128,18 @@ body {
 }
 
 .main-pane {
-  padding: 22px;
+  padding: 18px;
+}
+
+.content-wrap {
+  width: min(760px, 100%);
 }
 
 .top-header {
   border: 1px solid #24292d;
   background: #121417;
-  border-radius: 14px;
-  padding: 14px 16px;
+  border-radius: 6px;
+  padding: 8px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -143,7 +147,7 @@ body {
 
 .top-header h2 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   letter-spacing: 0.01em;
 }
 
@@ -159,13 +163,21 @@ body {
   align-items: center;
 }
 
-.status-pill {
-  border: 1px solid #2c613d;
-  color: #8df2af;
-  background: #16231b;
-  border-radius: 999px;
-  padding: 6px 10px;
-  font-size: 0.75rem;
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.online {
+  background: #2cd46d;
+  box-shadow: 0 0 0 1px #173a24;
+}
+
+.status-dot.offline {
+  background: #f05b5b;
+  box-shadow: 0 0 0 1px #442424;
 }
 
 .refresh-btn {
@@ -181,32 +193,41 @@ body {
   border-color: #3a3f44;
 }
 
+.refresh-btn.icon-only {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  line-height: 1;
+  font-size: 0.85rem;
+}
+
 .controls-row {
-  margin-top: 14px;
+  margin-top: 8px;
   border: 1px solid #24292d;
   background: #121417;
-  border-radius: 14px;
-  padding: 14px;
+  border-radius: 6px;
+  padding: 8px;
   display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(3, minmax(120px, 200px)) 1fr;
+  gap: 8px;
+  grid-template-columns: repeat(4, minmax(95px, 120px)) 1fr;
   align-items: end;
 }
 
 .controls-row label {
   display: grid;
-  gap: 6px;
-  font-size: 0.78rem;
+  gap: 4px;
+  font-size: 0.72rem;
   color: #9199a1;
 }
 
 input,
 select {
   border: 1px solid #2b3035;
-  border-radius: 10px;
-  padding: 9px 10px;
+  border-radius: 4px;
+  padding: 5px 7px;
   background: #181b1f;
   color: #e8eaed;
+  font-size: 0.78rem;
 }
 
 input:focus,
@@ -220,14 +241,14 @@ select:focus {
   justify-self: end;
   align-self: center;
   color: #8f969e;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
 }
 
 .table-card {
-  margin-top: 14px;
+  margin-top: 8px;
   border: 1px solid #24292d;
   background: #121417;
-  border-radius: 14px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
@@ -238,9 +259,9 @@ table {
 
 th,
 td {
-  padding: 12px 14px;
+  padding: 6px 10px;
   border-bottom: 1px solid #202429;
-  font-size: 0.86rem;
+  font-size: 0.8rem;
 }
 
 th {
@@ -259,8 +280,9 @@ tbody td:nth-child(2) {
 }
 
 .state {
-  padding: 18px;
+  padding: 10px;
   color: #9ba2aa;
+  font-size: 0.8rem;
 }
 
 .state.error {
