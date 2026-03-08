@@ -20,7 +20,6 @@ function formatVolume(value) {
 }
 
 export default function App() {
-  const [isRailOpen, setIsRailOpen] = useState(true);
   const [scanType, setScanType] = useState("premarket");
   const [minChangePct, setMinChangePct] = useState(4);
   const [minVolume, setMinVolume] = useState(100000);
@@ -63,29 +62,15 @@ export default function App() {
   }, [refreshSeconds, query]);
 
   return (
-    <div className="app-shell">
-      <aside className={`left-rail ${isRailOpen ? "open" : "closed"}`}>
-        <div className="rail-top">
-          <div className="brand-mark">CI</div>
-          {isRailOpen && (
-            <div>
-              <h1>CatalystIQ</h1>
-              <p className="brand-subtitle">Scanner Console</p>
-            </div>
-          )}
-          <button className="rail-toggle" onClick={() => setIsRailOpen((v) => !v)}>
-            {isRailOpen ? "<" : ">"}
-          </button>
+    <div className="app-page">
+      <div className="site-strip">
+        <div className="strip-inner">
+          <span>Scanner</span>
+          <span>Breakouts</span>
+          <span>Momentum</span>
         </div>
-        {isRailOpen && (
-          <div className="rail-content">
-            <nav className="rail-nav">
-              <button className="nav-item active">Scanner</button>
-            </nav>
-          </div>
-        )}
-      </aside>
-
+      </div>
+      <div className="masthead">CATALYSTIQ</div>
       <main className="main-pane">
         <div className="content-wrap">
           <header className="top-header">
