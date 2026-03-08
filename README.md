@@ -1,19 +1,28 @@
-﻿# CatalystIQ
+# CatalystIQ
 
-CatalystIQ is a web app for tracking and analyzing stock catalysts.
+CatalystIQ is a pre-market breakout scanner web app for US equities.
+
+## Stack
+
+- Frontend: React + Vite
+- Backend: FastAPI
+- Data provider: Polygon (mock-first workflow)
+- Database: Supabase (scan snapshots)
 
 ## Project Structure
 
-- rontend/ - UI app
-- ackend/ - API and data services
-- docs/ - architecture notes and brainstorming
+- `frontend/` UI dashboard
+- `backend/` API and providers
+- `docs/` planning and diagrams
 
-## Quick Start
+## Local Development
 
-1. Build frontend in rontend/.
-2. Build backend in ackend/.
-3. Keep diagrams and planning notes in docs/.
+1. Start backend from `backend/`.
+2. Start frontend from `frontend/`.
+3. Open the frontend URL and tune thresholds (`4%`, `100K`, `30s` default).
 
-## Brainstorm Diagram
+## Deploy Targets
 
-See docs/brainstorm.md for a Mermaid diagram starter.
+- Frontend: Vercel
+- Backend: Render
+- Database: Supabase

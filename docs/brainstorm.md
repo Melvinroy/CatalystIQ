@@ -1,6 +1,6 @@
-﻿# CatalystIQ Brainstorm
+# CatalystIQ Brainstorm
 
-`mermaid
+```mermaid
 flowchart TD
     A[Market Data + News Feeds] --> B[Ingestion Pipeline]
     B --> C[Event/Catalyst Classifier]
@@ -9,9 +9,9 @@ flowchart TD
     D --> F[Daily Catalyst Dashboard]
     E --> G[Trader Actions]
     F --> G
-`
+```
 
 ## Notes
 
-- Replace each node with concrete services as we implement.
-- Add data sources, model choices, and alert rules.
+- Component A in V1: pre-market breakout scanner.
+- Component B: placeholder panel for future expansion.
