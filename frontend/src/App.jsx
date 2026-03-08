@@ -61,14 +61,26 @@ export default function App() {
   return (
     <div className="app-shell">
       <aside className={`left-rail ${isRailOpen ? "open" : "closed"}`}>
-        <button className="rail-toggle" onClick={() => setIsRailOpen((v) => !v)}>
-          {isRailOpen ? "<" : ">"}
-        </button>
+        <div className="rail-top">
+          <div className="brand-mark">CI</div>
+          {isRailOpen && (
+            <div>
+              <h1>CatalystIQ</h1>
+              <p className="brand-subtitle">Scanner Console</p>
+            </div>
+          )}
+          <button className="rail-toggle" onClick={() => setIsRailOpen((v) => !v)}>
+            {isRailOpen ? "<" : ">"}
+          </button>
+        </div>
         {isRailOpen && (
           <div className="rail-content">
-            <h1>CatalystIQ</h1>
-            <p>Pre-market breakout scanner</p>
-            <div className="placeholder-card">
+            <nav className="rail-nav">
+              <button className="nav-item active">Pre-market Scanner</button>
+              <button className="nav-item">Watchlist</button>
+              <button className="nav-item">Alerts</button>
+            </nav>
+            <div className="placeholder-card rail-placeholder">
               <h3>Component B</h3>
               <p>Coming soon</p>
             </div>
@@ -83,6 +95,7 @@ export default function App() {
             <p>Session: 4:00-9:30 ET</p>
           </div>
           <div className="header-actions">
+            <span className="status-pill">Live View</span>
             <button className="refresh-btn" onClick={loadRows}>Refresh</button>
           </div>
         </header>
