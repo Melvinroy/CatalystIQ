@@ -1,0 +1,9 @@
+﻿.venv/
+__pycache__/
+*.pyc
+.env
+
+# generated exploration outputs
+/data/raw/*.json
+/data/raw/*.csv
+/data/processed/*.parquet

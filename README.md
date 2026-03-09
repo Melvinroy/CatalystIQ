@@ -13,6 +13,7 @@ CatalystIQ is a pre-market breakout scanner web app for US equities.
 
 - `frontend/` React + Vite dashboard
 - `backend/` FastAPI API, providers, tests
+- `data-exploration/` notebooks and normalized data profiling
 - `ui-ux/` wireframes, tokens, visual assets
 - `testing/` e2e and performance test suites
 - `infra/` deployment and infrastructure docs

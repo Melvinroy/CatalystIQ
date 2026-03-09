@@ -1,0 +1,34 @@
+﻿provider_order:
+  - polygon
+  - finnhub
+symbols_source: top_movers
+lookback_trading_days: 2
+sampling:
+  snapshot_cadence_seconds: 30
+  intraday_timespan: minute
+  intraday_multiplier: 1
+outputs:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  report_path: reports/price_volume_exploration.md
+schema:
+  required_fields:
+    - provider
+    - symbol
+    - ts_utc
+    - session
+    - last_price
+    - change_pct
+    - volume
+    - prev_close
+    - source_endpoint
+    - pull_id
+  optional_fields:
+    - provider_payload
+quality:
+  required_null_rate_max: 0.1
+  enforce_unique_on:
+    - provider
+    - symbol
+    - ts_utc
+    - source_endpoint

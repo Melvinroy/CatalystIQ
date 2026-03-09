@@ -1,0 +1,7 @@
+﻿pandas==2.2.2
+plotly==5.24.1
+pyarrow==17.0.0
+requests==2.32.3
+python-dotenv==1.0.1
+jupyterlab==4.2.5
+PyYAML==6.0.2
