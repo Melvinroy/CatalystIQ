@@ -45,3 +45,8 @@ Run all cells top to bottom.
 
 - If `FINNHUB_API_KEY` is empty, the notebook skips parity checks and still runs Polygon sections.
 - Keep API keys in `.env` only. Do not paste them into the notebook.
+- This notebook is tuned for currently free/entitled paths:
+  - Polygon grouped daily + Polygon intraday aggs
+  - Finnhub quote endpoint
+- Snapshot endpoints on Polygon may return `403 NOT_AUTHORIZED` depending on plan.
+- If Polygon returns `429`, wait and rerun (free tier has tighter rate limits).

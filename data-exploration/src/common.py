@@ -86,6 +86,13 @@ def polygon_snapshot_all(api_key: str, base_url: str) -> dict:
     return resp.json()
 
 
+def polygon_grouped_daily(api_key: str, base_url: str, market_date: str) -> dict:
+    url = f"{base_url.rstrip('/')}/v2/aggs/grouped/locale/us/market/stocks/{market_date}"
+    resp = requests.get(url, params={"adjusted": "true", "apiKey": api_key}, timeout=30)
+    resp.raise_for_status()
+    return resp.json()
+
+
 def polygon_intraday_bars(api_key: str, base_url: str, symbol: str, start_date: str, end_date: str) -> dict:
     url = f"{base_url.rstrip('/')}/v2/aggs/ticker/{symbol}/range/1/minute/{start_date}/{end_date}"
     resp = requests.get(url, params={"adjusted": "true", "sort": "asc", "limit": 50000, "apiKey": api_key}, timeout=30)
@@ -213,4 +220,8 @@ def save_raw_json(payload: dict, path: Path) -> None:
 
 def save_parquet(df: pd.DataFrame, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(path, index=False)
+    try:
+        df.to_parquet(path, index=False)
+    except Exception:
+        fallback = path.with_suffix(".csv")
+        df.to_csv(fallback, index=False)
