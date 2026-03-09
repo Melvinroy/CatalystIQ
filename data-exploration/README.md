@@ -35,12 +35,9 @@ copy .env.example .env
 jupyter lab
 ```
 
-## Notebook Order
+## Notebook
 
-1. `01_polygon_snapshot_profile.ipynb`
-2. `02_polygon_2day_intraday_profile.ipynb`
-3. `03_finnhub_parity_check.ipynb`
-4. `04_scanner_threshold_recommendations.ipynb`
+- `00_data_exploration_end_to_end.ipynb`
 
 ## Output Expectations
 
